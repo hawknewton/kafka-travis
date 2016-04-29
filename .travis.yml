@@ -5,3 +5,9 @@ services:
 language: ruby
 rvm:
   - 2.2
+
+before_install:
+  - docker run -p 2181:2181 -p 9092:9092 --env ADVERTISED_HOST=localhost --env ADVERTISED_PORT=9092 --name kafka spotify/kafka &
+    # This is crap, we could do way better
+  - sleep 5
+  - docker exec -it kafka /opt/kafka_2.11-0.8.2.1/bin/kafka-topics.sh --create --partitions 1 --replication-factor 1 --topic topic.test --zookeeper localhost:2181
