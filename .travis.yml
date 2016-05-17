@@ -11,4 +11,5 @@ before_install:
   - bundle install
 
 script:
-  - echo `ifconfig`
+  - echo $HOST
+  - docker ps
