@@ -1,7 +1,7 @@
+sudo: false
+
 services:
   - docker
-
-sudo: false
 
 language: ruby
 rvm:
@@ -12,4 +12,6 @@ before_install:
 
 script:
   - echo $HOST
+  - env
   - docker ps
+  - docke run --env ADVERTISE
