@@ -4,7 +4,6 @@ services:
 
 script:
   - docker run -p 9092:9092 -p 2181:2181 --env ADVERTISED_HOST=$(hostname) --env ADVERTISED_PORT=9292 -d spotify/kafka
-  - curl https://s3-us-west-1.amazonaws.com/x-files-travis-ci-docker-1463527014/19143549-6B47-46DC-91B5-A58C8A1473D5/riak.tar > riak.tar
   - docker load -i riak.tar
   - docker run -p 8098:8098 -d riak:latest
   - sleep 10
