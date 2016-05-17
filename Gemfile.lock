@@ -1,12 +1,14 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    rake (10.5.0)
     ruby-kafka (0.3.5)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  rake
   ruby-kafka
 
 BUNDLED WITH
